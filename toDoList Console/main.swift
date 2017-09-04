@@ -11,16 +11,23 @@ import Foundation
 var exitKey:Bool = false
 var itemsList:[String] = []
 
-func selectItem() -> Int {
-    var t = Int()
-    for var item in itemsList{
+func printItems(arr : [String]) {
+    for var item in arr{
         print(item)
     }
+}
+
+func selectItem(arr : [String]) -> Int {
+    var t = Int()
+    printItems(arr : arr)
+    //for var item in arr{
+      //  print(item)
+    //}
     print("Type selected")
     var selectedItem:String = readLine()!
-    if itemsList.contains(selectedItem){
-        for i in 0..<itemsList.count {
-            if itemsList[i] == selectedItem {
+    if arr.contains(selectedItem){
+        for i in 0..<arr.count {
+            if arr[i] == selectedItem {
                 t = i
             }
         }
@@ -64,7 +71,7 @@ while !exitKey {
          } */
         
         print("Type new text")
-        itemsList[selectItem()] = readLine()!
+        itemsList[selectItem(arr : itemsList)] = readLine()!
         
     case "rml":
         itemsList.removeLast()
@@ -89,13 +96,14 @@ while !exitKey {
          break
          }
          */
-        itemsList.remove(at: selectItem())
+        itemsList.remove(at: selectItem(arr : itemsList))
         
     case "ls":
         print("List of items:")
-        for var item in itemsList{
-            print(item)
-        }
+        printItems(arr : itemsList)
+        //for var item in itemsList{
+          //  print(item)
+        //}
         
     case "e":
         exitKey = true
