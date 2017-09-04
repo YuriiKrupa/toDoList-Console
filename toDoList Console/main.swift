@@ -53,23 +53,6 @@ while !exitKey {
         
     case "add-e":
         print("Type which one should be modified")
-        /* for var item in itemsList{
-         print(item)
-         }
-         print("Type selected")
-         var selectedItem:String = readLine()!
-         if itemsList.contains(selectedItem){
-         for i in 0..<itemsList.count {
-         if itemsList[i] == selectedItem {
-         print("Type new text")
-         itemsList[i] = readLine()!
-         }
-         }
-         }else{
-         print("Such item missing")
-         break
-         } */
-        
         print("Type new text")
         itemsList[selectItem(arr : itemsList)] = readLine()!
         
@@ -79,31 +62,11 @@ while !exitKey {
         
     case "rm":
         print("Type which one should be deleted")
-        /* for var item in itemsList{
-         print(item)
-         }
-         print("Type selected")
-         var selectedItem:String = readLine()!
-         if itemsList.contains(selectedItem){
-         for i in 0..<itemsList.count {
-         if itemsList[i] == selectedItem {
-         itemsList.remove(at: i)
-         
-         }
-         }
-         }else{
-         print("Such item missing")
-         break
-         }
-         */
         itemsList.remove(at: selectItem(arr : itemsList))
         
     case "ls":
         print("List of items:")
         printItems(arr : itemsList)
-        //for var item in itemsList{
-          //  print(item)
-        //}
         
     case "e":
         exitKey = true
