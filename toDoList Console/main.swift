@@ -20,9 +20,6 @@ func printItems(arr : [String]) {
 func selectItem(arr : [String]) -> Int {
     var t = Int()
     printItems(arr : arr)
-    //for var item in arr{
-      //  print(item)
-    //}
     print("Type selected")
     var selectedItem:String = readLine()!
     if arr.contains(selectedItem){
@@ -38,7 +35,7 @@ func selectItem(arr : [String]) -> Int {
 }
 
 while !exitKey {
-    print("Type operation key [ add | add-e | rm | rml | ls | e]: ")
+    print("Type operation key [ add | add-e | rm | rml | ls | e ]: ")
     let key:String = readLine()!
     switch key {
         
